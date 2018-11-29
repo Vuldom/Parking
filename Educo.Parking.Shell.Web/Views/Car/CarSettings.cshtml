@@ -1,0 +1,61 @@
+﻿@using Educo.Parking.Shell.Web.Models;
+@using Educo.Parking.Business;
+@{
+    ViewData["Title"] = "CarSettings";
+}
+<link href="~/css/car.css" rel="stylesheet" type="text/css" />
+@model CarSettingsModel
+
+<div class="col m12 s12 l12">
+    <h4 class="teal-text center-align">Cars</h4>
+    <ul class="collapsible">
+        @foreach (Car car in Model.Cars)
+        {
+
+            <li>
+                <div id="btnInfo" class="collapsible-header" value="@car.StateNumber">
+                    <i class="material-icons secondary-content">info</i>
+                    @car.StateNumber
+                </div>
+                <div class="collapsible-body">
+                    <span>
+                        <label for="disabled">State number</label>
+                        <input disabled value="@car.StateNumber" id="disabledNum" type="text" class="validate">
+                        <label for="disabled">Make</label>
+                        <input disabled value="@car.Manufacturer" id="disabled" type="text" class="validate">
+                        <label for="disabled">Model</label>
+                        <input disabled value="@car.Model" id="disabled" type="text" class="validate">
+                        <label for="disabled">Year</label>
+                        <input disabled value="@car.Year" id="disabled" type="text" class="validate">
+                        <label for="disabled">Color</label>
+                        <input disabled value="@car.Color" id="disabled" type="text" class="validate">
+                    </span>
+
+                    <div style="text-align:right">
+                        <div style="text-align:left" id="removecar'@car.StateNumber'" class="modal">
+                            <div class="modal-content">
+                                <h4>Removing</h4>
+                                <p>You are going to remove car @car.StateNumber. Are you sure?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                                <a class="modal-close waves-effect waves-green btn-flat" asp-controller="Car" asp-action="RemoveCar" asp-route-statenumber="@car.StateNumber">OK</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+</div>
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+        <i class="large material-icons">menu</i>
+    </a>
+    <ul>
+        <li id="btnArrive" class="hide"><a class="btn-floating blue btn modal-trigger" onclick="setValue()"><i class="material-icons">directions_car</i></a></li>
+        <li id="btnRemove" class="hide"><a class="btn-floating red btn modal-trigger"><i class="material-icons">remove</i></a></li>
+        <li id="btnEdit" class="hide"><a class="btn-floating yellow darken-1" asp-controller="Car" asp-action="EditCar"><i class="material-icons">edit</i></a></li>
+        <li><a class="btn-floating green" asp-controller="Car" asp-action="AddCar"><i class="material-icons">add</i></a></li>
+    </ul>
+</div>

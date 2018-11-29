@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "devDependencies": {
+    "@types/googlemaps": "^3.30.11",
+    "@types/jquery": "3.3.10",
+    "@types/jquery-validation-unobtrusive": "3.2.32",
+    "@types/jquery.validation": "1.16.5",
+    "@types/materialize-css": "1.0.4"
+  }
+}

@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-Educo.Parking.Shell.Web-434F3D8A-7824-4BBA-A172-7A245AAD493F</UserSecretsId>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\ts\car-settings.ts" />
+    <Content Remove="wwwroot\ts\geolocation.ts" />
+    <Content Remove="wwwroot\ts\login-message.ts" />
+    <Content Remove="wwwroot\ts\site.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Educo.Parking.Business\Educo.Parking.Business.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\ts\car-settings.ts" />
+    <TypeScriptCompile Include="wwwroot\ts\geolocation.ts" />
+    <TypeScriptCompile Include="wwwroot\ts\login-message.ts" />
+    <TypeScriptCompile Include="wwwroot\ts\site.ts" />
+    <Folder Include="wwwroot\js\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\js\" />
+  </ItemGroup>
+</Project>

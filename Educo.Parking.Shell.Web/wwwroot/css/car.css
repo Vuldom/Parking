@@ -1,0 +1,7 @@
+﻿.fixed-action-btn ul li.hide {
+    display: none;
+}
+
+.fixed-action-btn ul li.show {
+    display: inline-block;
+}

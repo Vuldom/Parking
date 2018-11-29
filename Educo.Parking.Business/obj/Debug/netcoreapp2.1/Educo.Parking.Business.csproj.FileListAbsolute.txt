@@ -1,0 +1,11 @@
+/Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Business/bin/Debug/netcoreapp2.1/Educo.Parking.Business.deps.json
+/Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Business/bin/Debug/netcoreapp2.1/Educo.Parking.Business.dll
+/Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Business/bin/Debug/netcoreapp2.1/Educo.Parking.Business.pdb
+/Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Business/bin/Debug/netcoreapp2.1/Educo.Parking.Data.dll
+/Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Business/bin/Debug/netcoreapp2.1/Educo.Parking.Data.pdb
+/Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Business/obj/Debug/netcoreapp2.1/Educo.Parking.Business.csprojResolveAssemblyReference.cache
+/Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Business/obj/Debug/netcoreapp2.1/Educo.Parking.Business.csproj.CoreCompileInputs.cache
+/Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Business/obj/Debug/netcoreapp2.1/Educo.Parking.Business.AssemblyInfoInputs.cache
+/Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Business/obj/Debug/netcoreapp2.1/Educo.Parking.Business.AssemblyInfo.cs
+/Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Business/obj/Debug/netcoreapp2.1/Educo.Parking.Business.dll
+/Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Business/obj/Debug/netcoreapp2.1/Educo.Parking.Business.pdb

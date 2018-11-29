@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ЭДУКО: Умная Парковка</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <environment include="Development">
+        <!--Include materialize.css-->
+        <link rel="stylesheet" href="@Url.Content("~/lib/materialize-css/dist/css/materialize.css")" />
+        <link rel="stylesheet" href="@Url.Content("~/lib/materialize-social/materialize-social.css")" />
+        <link rel="stylesheet" href="@Url.Content("~/css/main.css")" asp-append-version="true" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="@Url.Content("~/lib/materialize-css/dist/css/materialize.min.css")" />
+        <link rel="stylesheet" href="@Url.Content("~/css/main.css")" />
+    </environment>
+</head>
+<body>
+    @*<div class="body-main-layout">    </div>*@
+    <div class="body-container">
+        @RenderBody()
+    </div>
+    <footer id="footer">
+        <div style="padding:0.5rem;">
+            © @DateTime.Now.Year ООО ЭДУКО-БЕЛ
+            <a class="right" href="http://educo.by">www.educo.by</a>
+        </div>
+    </footer>
+    <environment include="Development">
+        <script src="@Url.Content("~/lib/jquery/dist/jquery.js")"></script>
+        <script src="@Url.Content("~/lib/jquery-validation/dist/jquery.validate.js")"></script>
+        <script src="@Url.Content("~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js")"></script>
+        <script src="@Url.Content("~/lib/materialize-css/dist/js/materialize.js")"></script>
+        <script src="@Url.Content("~/lib/materialize-social/js/materialize.js")"></script>
+        <script src="@Url.Content("~/js/site.js")" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="@Url.Content("~/lib/jquery/dist/jquery.min.js")"></script>
+        <script src="@Url.Content("~/lib/jquery-validation/dist/jquery.validate.min.js")"></script>
+        <script src="@Url.Content("~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js")"></script>
+        <script src="@Url.Content("~/lib/materialize-css/dist/js/materialize.min.js")"></script>        
+        <script src="@Url.Content("~/js/site.js")"></script>
+    </environment>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

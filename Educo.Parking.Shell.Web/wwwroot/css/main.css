@@ -1,0 +1,21 @@
+@import url(components/login.css);
+@import url(components/informpart.css);
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab');
+/*@import "materialize-social.less";*/
+
+.body-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    background-color: #edf5fa;
+}
+.map {
+    height: 100%;
+}
+
+/*.body-main-layout {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    background-color: #edf5fa;
+}*/

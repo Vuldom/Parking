@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "materialize-css@1.0.0",
+      "destination": "wwwroot/lib/materialize-css/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "jquery@3.3.1",
+      "destination": "wwwroot/lib/jquery/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "jquery-validation@1.18.0",
+      "destination": "wwwroot/lib/jquery-validation/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "jquery-validation-unobtrusive@3.2.11",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "materialize-social@1.0.3",
+      "destination": "wwwroot/lib/materialize-social/"
+    }
+  ]
+}

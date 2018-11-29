@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{9B2EC47B-C534-4573-918F-E3355DF2A58E}|Default">
+  <MonoDevelop.Ide.ItemProperties.Educo.Parking.Shell.Web PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Состояние: Parking">
+    <Files>
+      <File FileName="Состояние: Parking" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

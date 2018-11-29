@@ -1,0 +1,62 @@
+@using Educo.Parking.Shell.Web.Models;
+@using Educo.Parking.Shell.Web.Extensions;
+
+@{
+    Layout = "Layout";
+    ViewData["Title"] = "User Profile";
+}
+
+@model LoginModel
+
+<div class="background-container">
+    <div class="row">
+        <div class="form-card-contents col s12 m12 l9">
+            <div class="card blue-grey lighten-5">
+                <div class="card-content white-text">
+                    <div class="row valign-wrapper">
+                        <div class="col s12 m12 l12">
+                            <img class="responsive-img form-card-contents" src="@Url.Content("~/images/logo.png")" height="250" width="250">
+                        </div>
+                    </div>
+                    <div class="login-form">
+                        <form asp-controller="Account" asp-action="Login">
+                            <div class="input-field col s12">
+                                <input type="email" asp-for="Login" class="validate" />
+                                <label asp-for="Login"></label>
+                                <span asp-validation-for="Login" class="helper-text"></span>
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="password" asp-for="Password" class="validate" />
+                                <label asp-for="Password"></label>
+                                <span asp-validation-for="Password" class="helper-text"></span>
+                            </div>
+                            <div class="input-field col s12">
+                                <button type="submit" class="waves-effect waves-light btn">Log in</button>
+                                <a id="regbutton" class="waves-effect waves-light btn" asp-controller="Account" asp-action="Register">Register</a>
+                                <a asp-action="ExternalLogin" asp-route-returnurl="@ViewData["ReturnUrl"]" asp-route-provider="Google" method="get"  class="waves-effect waves-light btn social google">
+                                    <i class="fa fa-google"></i> Sign in with google
+                                </a>
+                            </div>
+                            <div class="forgotpass input-field col s12">
+                                <div class="card-action"></div>
+                                <a asp-controller="Account" asp-action="ForgotPassword"><p>Forgot password?</p></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    @if (@ViewData.GetModelStateErrors(Json).HasErrors)
+    {
+        <script>
+            (function () {
+                let mass =  @ViewData.GetModelStateErrors(Json).Errors;
+                showMessageError(mass);
+            })();
+        </script>
+    }
+}

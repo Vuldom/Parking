@@ -1,0 +1,71 @@
+﻿@using Educo.Parking.Shell.Web.Models;
+@using Educo.Parking.Business;
+@model AccountSettingsViewModel
+
+@{
+    ViewData["Title"] = "AccountSettings";
+}
+
+<h4 class="teal-text center-align">Account Settings</h4>
+<div class="row">
+    <div class="col s12 m12 l12">
+        <div class="card #ffffff white">
+            <div class="card-content">
+                <span class="card-title indigo-text">Personal Information</span>
+                <form name="userInfoUpdate"  enctype="multipart/form-data" method="post" asp-controller="Profile" asp-action="Update">
+                    <div class="row">
+                        <div class="col">
+                            <div class="file-field input-field">
+                                <p><img src="@Url.Content($"~/{Model.Photo}")" class="circle responsive-img" onerror="this.onerror=null; this.src='@Url.Content("~/images/UsersImages/Anonymous_emblem.svg")';" style="height:auto;width:10rem;"></p>
+                                <input asp-for="Photo" type="file">
+                            </div>
+                        </div>
+                        <div class="input-field col s12 m12 l9">
+                            <input asp-for="FirstName">
+                            <label class="active" asp-for="FirstName"></label>
+                        </div>
+                        <div class="input-field col s12 m12 l9">
+                            <input asp-for="LastName">
+                            <label class="active" asp-for="LastName"></label>
+                        </div>
+
+                        <div class="input-field col s12 m4 l4">
+                            <input asp-for="Email">
+                            <label class="active" asp-for="Email"></label>
+                        </div>        
+                    </div>
+                    <div style="text-align:left">
+                        <button type="submit" class="btn waves-effect waves-light blue">Save<i class="material-icons right">save</i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m12 l12">
+        <div class="card #ffffff white">
+            <div class="card-content">
+                <span class="card-title indigo-text">Change password</span>
+                <form name="userPasswordChange" method="post" asp-controller="Profile" asp-action="ChangePassword">
+                    <h5>@TempData["repeatpass"]</h5>
+                    <div class="row">
+                        <div class="input-field col s12 m6 l6">
+                            <input asp-for="Password">@*id="currentPassword"*@
+                            <label class="active" asp-for="Password"></label>
+                        </div>
+                        @*<div class="input-field col s12 m6 l6">
+                            <input asp-for="RepeatPassword" id="currentPasswordRepeat">
+                            <label class="active" asp-for="RepeatPassword"></label>
+                        </div>*@
+                        <div class="input-field col s12 m6 l6">
+                            <input asp-for="NewPassword">@*id="newPassword"*@
+                            <label class="active" asp-for="NewPassword"></label>
+                        </div>
+                    </div>
+                    <div style="text-align:left">
+                        <button type="submit" class="btn waves-effect waves-light blue">Save<i class="material-icons right">save</i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿@using Educo.Parking.Business.Managers;
+@using System.Security.Claims;
+
+@{
+    Layout = "Layout";
+
+}
+@inject IdentityProfileManager IdentityProfileManager
+@{Educo.Parking.Business.User user = await IdentityProfileManager.GetUserAsync(User); }
+
+<div class="body-main-layout">
+    <div class="row">
+        <div class="col l3 m0">
+            <ul id="slide-out" class="sidenav sidenav-fixed">
+                <li>
+                    <div class="user-view">
+                        <img asp-controller="Home" asp-action="AccountSettings" class="circle responsive-img" src="@Url.Content($"~/{user?.UserPhoto}")" onerror="this.onerror=null; this.src='@Url.Content("~/images/UsersImages/Anonymous_emblem.svg")';" style="height:auto;width:5rem;">
+                        <h6 class="indigo-text">@user?.FirstName @user?.LastName</h6>
+                    </div>
+                    <div class="divider"></div>
+                </li>
+                <li><a class="waves-effect" asp-controller="Home" asp-action="Index"><i class="small material-icons">account_circle</i>User Profile</a></li>
+                <li><a class="waves-effect" asp-controller="Car" asp-action="CarSettings"><i class="small material-icons">directions_car</i>Cars</a></li>
+                <li><a class="waves-effect" href="#!"><i class="small material-icons">equalizer</i>Statistics</a></li>
+                <li><a class="waves-effect" asp-controller="Profile" asp-action="AccountSettings"><i class="small material-icons">settings</i>Account Settings</a></li>
+                <li><a class="waves-effect" asp-controller="Account" asp-action="Logout"><i class="small material-icons">exit_to_app</i>Log out</a></li>
+            </ul>
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+        <div class="col l8 m12">
+            @RenderBody()
+        </div>
+    </div>
+</div>
+@RenderSection("Scripts", required: false)

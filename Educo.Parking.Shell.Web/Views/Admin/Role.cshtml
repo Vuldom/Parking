@@ -1,0 +1,46 @@
+﻿@using Educo.Parking.Shell.Web.Models;
+@using Educo.Parking.Business;
+@using Educo.Parking.Data;
+@model RoleSettingsModel
+
+@{
+    ViewData["Title"] = "Role";
+}
+
+<h4 class="teal-text center-align">Role Settings</h4>
+<div class="row">
+    <div class="col s12 m12 l12">
+        <div class="card #ffffff white">
+            <form enctype="multipart/form-data" method="post" asp-controller="Admin" asp-action="SaveRoles">
+                <table class="striped centered">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Name</th>
+                            <th>Admin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            @foreach (ApplicationUserModel userModel in Model.UsersWithRoles)
+                            {
+                                <td>@userModel.User.UserName</td>
+                                <td>@userModel.User.FirstName @userModel.User.Lastname</td>
+                                <td>
+                                    <label>
+                                        <input name="userId" value="@userModel.User.Id" checked="@userModel.IsAdmin" type="checkbox"/ >
+                                        <span></span>
+                                    </label>
+                                </td>
+                            }
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="text-align:right; padding-bottom:1rem;padding-top:1rem;padding-right:1rem">
+                    <button type="submit" class="btn waves-effect waves-light blue">Save<i class="material-icons right">save</i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

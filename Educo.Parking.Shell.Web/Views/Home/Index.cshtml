@@ -1,0 +1,145 @@
+﻿@using Educo.Parking.Shell.Web.Models;
+@using Educo.Parking.Business;
+@{
+    ViewData["Title"] = "User Profile";
+    CostManager costManager = new CostManager();
+}
+@model HomeViewModel
+
+<div class="row">
+    <h4 class="teal-text center-align">@Model.FirstName's Profile</h4>
+    <div class="col l6 m12 s12">
+        <form asp-controller="Home" asp-action="OrderCar" method="get" name="orderCarForm">
+            <div class="card #ffffff white">
+                <div class="card-content">
+                    <span class="card-title indigo-text">Order a Car</span>
+                    <div class="input-field">
+                        <select asp-for="SelectedCar" asp-items="Model.CarItems"></select>
+                    </div>
+                    <span class="card-title indigo-text">Parkings:</span>
+                    <div class="row">
+                        <div class="input-field col l6 m12 s12">
+                            <select onchange="setParkingLabel()" asp-for="SelectedParking" asp-items="Model.ParkingItems"></select>
+                        </div>
+                        <div class="col l6 m12 s12">
+                            <a style="margin-top:2rem;" class="waves-effect waves-light btn-small" onclick="findLocation()">Find Nearest</a>
+                        </div>
+                    </div>
+                    <div id="map" style="height:15rem;"></div>
+                    <p style="margin-top:3vh; text-align:right;"><button type="submit" class="btn waves-effect waves-light">Order</button></p>
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <button style="display:none;" id="orderTrigger" data-target="OrderModal" class="btn modal-trigger">Trigger</button>
+                        <script type="text/javascript">
+
+                            window.onload = function () {
+                                document.getElementById("orderTrigger").click();
+                            }
+
+                        </script>
+
+                    }
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col l6 m12 s12">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title indigo-text">Statistics</span>
+            </div>
+            <div class="card-tabs">
+                <ul class="tabs tabs-fixed-width">
+                    <li class="tab"><a href="#tab1">Week</a></li>
+                    <li class="tab"><a class="active" href="#tab2">Month</a></li>
+                    <li class="tab"><a href="#tab3">Year</a></li>
+                </ul>
+            </div>
+            <div class="card-content grey lighten-4">
+                <div id="tab1">
+                    <p>Average amount: 1</p>
+                    <p>Number of parking: 1</p>
+                    <p>Average duration: 1</p>
+                    <p>SOME CHART</p>
+                </div>
+                <div id="tab2">
+                    <p>Average amount: 2</p>
+                    <p>Number of parking: 2</p>
+                    <p>Average duration: 2</p>
+                    <p>SOME CHART</p>
+                </div>
+                <div id="tab3">
+                    <p>Average amount: 3</p>
+                    <p>Number of parking: 3</p>
+                    <p>Average duration: 3</p>
+                    <p>SOME CHART</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div class="row">
+    <div class="col l6 m12 s12">
+        <div class="card #ffffff white">
+            <div class="card-content">
+                <span class="card-title indigo-text">In Progress</span>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Car</th>
+                            <th>Amount to pay</th>
+                            <th>Parking</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Car car in Model.Cars)
+                        {
+                            Money money = costManager.GetPrice(car);
+                            <tr>
+                                <td>@car.StateNumber</td>
+                                <td class="">@money.Value @money.Currency</td>
+                                <td>@Model.Parkings.SingleOrDefault(p => p.Key == car.Id).Value</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col l6 m12 s12">
+        <div class="card #ffffff white">
+            <div class="card-content">
+                <span class="card-title indigo-text">News</span>
+                <p>
+                    <!--  Экспорт новостей TUT.BY  -->
+                    <script type="text/javascript" src="https://news.tut.by/export/TUTBYExporter.js" charset="utf-8"></script>
+                    <script type="text/javascript" src="https://news.tut.by/export/auto/autonews_3.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                        TUTBY.SetTitleStyle("Verdana, Arial,Helvetica, sans-serif", 12, "black");
+                        TUTBY.SetTargetBlank();
+                        TUTBY.ExportNews();
+                    </script>
+                    <!--  Экспорт новостей TUT.BY   -->
+
+                </p>
+            </div>
+        </div>
+    </div>   
+        <div id="OrderModal" class="modal">
+            <div class="modal-content">
+                <h4>Order Status</h4>
+                <p>@TempData["SuccessMessage"]</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="ReadyToGo()">OK</a>
+            </div>
+        </div>
+    </div>
+<input type="hidden" id="ok" data-value='@TempData["OK"]' />
+    @section scripts
+        {
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLwtv_Ybh-Qqou7wwrMs2PkLufJ2civN0&callback=showMap" async defer></script>
+
+}

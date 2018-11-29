@@ -1,0 +1,46 @@
+﻿@using Educo.Parking.Shell.Web.Models;
+
+@{
+    Layout = "Layout";
+    ViewData["Title"] = "Register";
+}
+
+@model RegisterModel
+
+<div class="background-container">
+    <div class="row">
+        <div class="form-card-contents col s3 m6 l9">
+            <div class="card blue-grey lighten-5">
+                <div class="card-content white-text">
+                    <div class="row valign-wrapper">
+                        <div class="col s12">
+                            <img class="responsive-img form-card-contents" src="@Url.Content("~/images/logo.png")" height="250" width="250">
+                        </div>
+                    </div>
+                    <div class="login-form">
+                        <form name="register" method="post" asp-controller="Account" asp-action="Register">
+                            <div class="input-field col s12">
+                                <input asp-for="Username" id="username" type="text" class="validate">
+                                <label class="active" for="username">Username</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input asp-for="Email" id="email" type="text" class="validate">
+                                <label class="active" for="email">E-mail</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input asp-for="Password" id="password" type="password" class="validate">
+                                <label class="active" for="password">Password</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input asp-for="PasswordRepeat" id="repeatPassword" type="password" class="validate">
+                                <label class="active" for="repeatPassword">Repeat Password</label>
+                            </div>
+                            <button class="waves-effect waves-light btn">Register</button>
+                            <button class="waves-effect waves-light btn">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
