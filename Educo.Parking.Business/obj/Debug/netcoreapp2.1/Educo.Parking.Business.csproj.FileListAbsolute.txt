@@ -9,3 +9,5 @@
 /Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Business/obj/Debug/netcoreapp2.1/Educo.Parking.Business.AssemblyInfo.cs
 /Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Business/obj/Debug/netcoreapp2.1/Educo.Parking.Business.dll
 /Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Business/obj/Debug/netcoreapp2.1/Educo.Parking.Business.pdb
+C:\Users\user\Source\Repos\Parking\Educo.Parking.Business\obj\Debug\netcoreapp2.1\Educo.Parking.Business.dll
+C:\Users\user\Source\Repos\Parking\Educo.Parking.Business\obj\Debug\netcoreapp2.1\Educo.Parking.Business.pdb

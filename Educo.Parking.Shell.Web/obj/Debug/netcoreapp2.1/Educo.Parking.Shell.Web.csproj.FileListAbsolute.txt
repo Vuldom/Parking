@@ -40,3 +40,5 @@
 /Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Shell.Web/obj/Debug/netcoreapp2.1/Educo.Parking.Shell.Web.dll
 /Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Shell.Web/obj/Debug/netcoreapp2.1/Educo.Parking.Shell.Web.pdb
 /Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Shell.Web/obj/Debug/netcoreapp2.1/Educo.Parking.Shell.Web.csproj.CopyComplete
+C:\Users\user\Source\Repos\Parking\Educo.Parking.Shell.Web\obj\Debug\netcoreapp2.1\Educo.Parking.Shell.Web.dll
+C:\Users\user\Source\Repos\Parking\Educo.Parking.Shell.Web\obj\Debug\netcoreapp2.1\Educo.Parking.Shell.Web.pdb

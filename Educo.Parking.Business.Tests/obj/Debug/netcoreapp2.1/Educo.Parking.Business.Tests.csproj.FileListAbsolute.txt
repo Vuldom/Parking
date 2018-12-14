@@ -20,3 +20,5 @@
 /Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Business.Tests/obj/Debug/netcoreapp2.1/Educo.Parking.Business.Tests.AssemblyInfo.cs
 /Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Business.Tests/obj/Debug/netcoreapp2.1/Educo.Parking.Business.Tests.dll
 /Users/maryiapaliashchuk/Downloads/ZEUS/Educo.Parking.Business.Tests/obj/Debug/netcoreapp2.1/Educo.Parking.Business.Tests.pdb
+C:\Users\user\Source\Repos\Parking\Educo.Parking.Business.Tests\obj\Debug\netcoreapp2.1\Educo.Parking.Business.Tests.dll
+C:\Users\user\Source\Repos\Parking\Educo.Parking.Business.Tests\obj\Debug\netcoreapp2.1\Educo.Parking.Business.Tests.pdb
